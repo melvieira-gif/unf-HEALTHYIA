@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEALTH-IA</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<!--Parte para se cadastrar-->
+<body>
+
+    <!--Principais botões-->
+    <div class="fundo_btn">
+        <figure>  
+            <img src="HealthIA.png" alt="LOGOTIPO HEALTH-IA">
+        </figure>
+        <button class="btn_branco" id="btn_contato">Fale Conosco</button>
+        <button class="btn_branco" id="btn_login">Login</button>
+        <button class="btn_branco" id="btn_home">Home</button>
+        <button class="btn_branco" id="btn_trabalhe">Trabalhe Conosco</button>
+    </div>
+    
+    <!--Parte fale conosco-->
+    <div class="div_contato ocultar" id="div_contato">
+        <h1 class="h1_contato">Fale conosco</h1>
+        <!--preenchimento fale conosco-->
+        <div id="div_formulario" class="div_formulario">
+           <label for="input_nomeFC">Nome:</label>
+            <input id="input_nomeFC" class="input_formulario" type="text">
+
+            <br><br>
+
+            <label for="input_emailFC">Email:</label>
+            <input id="input_emailFC" class="input_formulario" type="email">
+
+            <br><br>
+
+            <label for="input_assuntoFC">Assunto:</label>
+            <input id="input_assuntoFC" class="input_formulario" type="text">
+
+            <br><br>
+
+            <label for="input_msgFC">Mensagem:</label>
+            <input id="input_msgFC" class="input_formulario" type="text">
+
+            <br><br>
+
+            <button class="botao" id="btn_enviar_contato">Enviar</button>
+
+            <p class="d_p" id="resultadoFale">O resultado vai aparecer aqui</p>
+        </div>
+    </div>
+    <!--Parte do login-->
+    <div class="div_login ocultar" id="div_login">
+        <h1 class="d_p">Login Health-IA</h1>
+        <h1 class="h1V">Deseja fazer o login? 
+        <a href="login.html" class="link">Voltar para a tela de login</a>
+    </div>
+    
+    <!--parte do home-->
+    <div  class="div_home ocultar" id="div_home">
+        <br>
+        <h1 class="h1_contato">Home</h1>
+        <h2 class="hmod">Revolucionando a Saúde com Inteligência Artificial</h2>
+        <h3 class="hmod">Soluções inovadoras para diagnósticos precisos e tratamentos personalizados</h3>
+        <br>
+        <h4 class="hmod">Funcionalidades principais</h4>
+        <p class="d_p">
+            - Análise de sintomas
+            <br>
+            - IA interpreta sintomas e oferece possíveis caminhos.
+            <br>
+            - Monitoramento de hábitos
+            <br>
+            - Acompanha sono, água, alimentação etc.
+            <br>
+            - Chat personalizado com IA
+            <br>
+            - Responde dúvidas e dá orientações gerais.
+            <br>
+            - Alertas e lembretes
+            <br>
+            - Remédio, consulta, hidratação, etc.
+            <br>
+            - Sugestões de bem-estar
+            <br>
+            - Exercícios, alimentação, cuidados diários.
+        </p>
+        <br>
+        <br>
+        <h4 class="hmod">Benefícios</h4>
+        <p class="d_p">
+            - Reduz o tempo de busca por informações confiáveis.
+            <br>
+            - Aumenta o autocuidado.
+            <br>
+            - Melhora a organização da saúde.
+            <br>
+            - Interface fácil e rápida.
+        </p>
+        <br>
+        <h4 class="hmod">Soluções</h4>
+            <p class="d_p">
+                • Diagnóstico Assistido por IA
+                <br>
+                • Personalização de tratamentos
+                <br>
+                • Monitoramento Remoto de pacientes
+                <br>
+                • Análise Preditiva para prevenção de doenças
+            </p>
+            <br><br>
+        <br><br>
+    </div>
+    <!-- trabalhe conosoco -->
+     <div class="div_trabalhe ocultar" id="div_trabalhe">
+        <h1 class="h1_contato">Vagas abertas</h1>
+        <!-- vagas -->
+        <div  class="vaga">
+            <h3>Cientista de Dados em Saúde</h3>
+                <p><strong>Requisitos:</strong></p>
+                <ul>
+                    <li>Experiência em machine learning</li>
+                    <li>Conhecimento em dados clínicos</li>
+                    <li>Paixão por inovação</li>
+                </ul>
+                <button class="btn" id="btn_candidate1"> <a href="vaga.html" target="_blank">Canditarte-se</a></button>
+        </div>
+    
+        <div class="vaga">
+            <h3>Engenheiro de Software para IA Médica</h3>
+            <p><strong>Requisitos:</strong></p>
+            <ul>
+                <li>Desenvolvimento de sistemas seguros e escaláveis</li>
+                <li>Experiência com APIs de saúde</li>
+            </ul>
+            <button class="btn" id="btn_candidate2"><a href="vaga.html" target="_blank">Canditarte-se</a></button>
+        </div>
+        <br>
+        <br>
+        <div class="vagaULTIMA">
+            <h3>Não encontrou sua vaga?</h3>
+            <p class="frase_envie_curriculo">Envie seu currículo e conte como você pode contribuir para a transformação
+                da saúde!
+            </p>
+            <button class="btn" id="btn_enviar_curriculo"><a href="vaga.html" target="_blank">Enviar Currículo</a></button>
+        </div>
+     </div>
+
+</body>
+
+<script>
+      // LOGIN
+
+    // para os botões sumirem/desaparecer login e fale conosco e home
+    document.getElementById("btn_contato").addEventListener("click", () => {
+        document.getElementById("div_contato").classList.toggle("ocultar");
+        document.getElementById("div_login").classList.add("ocultar");
+        document.getElementById("div_home").classList.add("ocultar");
+        document.getElementById("div_trabalhe").classList.add("ocultar");
+       
+    }); 
+    document.getElementById("btn_login").addEventListener("click", () => {
+        document.getElementById("div_login").classList.toggle("ocultar");
+        document.getElementById("div_contato").classList.add("ocultar");
+        document.getElementById("div_home").classList.add("ocultar");
+        document.getElementById("div_trabalhe").classList.add("ocultar");
+     
+    }); 
+    document.getElementById("btn_home").addEventListener("click", () => {
+        document.getElementById("div_login").classList.add("ocultar");
+        document.getElementById("div_home").classList.toggle("ocultar");
+        document.getElementById("div_contato").classList.add("ocultar");
+        document.getElementById("div_trabalhe").classList.add("ocultar");
+        
+    });
+
+    document.getElementById("btn_trabalhe").addEventListener("click", () => {
+        document.getElementById("div_login").classList.add("ocultar");
+        document.getElementById("div_trabalhe").classList.toggle("ocultar");
+        document.getElementById("div_contato").classList.add("ocultar");
+        document.getElementById("div_home").classList.add("ocultar");
+        
+    });
+    
+    
+    // back+banco de dados FALE CONOSOCO
+
+    // criar um evento para quando clicar no botão
+    document.getElementById("btn_enviar_contato").addEventListener("click", async ()=>{
+        // primeira etapa- pegar as informaçoes dos inputs 
+        const nome = document.getElementById("input_nomeFC").value
+        const email = document.getElementById("input_emailFC").value
+        const assunto = document.getElementById("input_assuntoFC").value
+        const mensagem = document.getElementById("input_msgFC").value
+
+        // segunda etapa- fazer a requisição para o back-end o que o thunder client não mostra oq faz
+        // fetch funciona pq vai passar o endereço da requisição
+        const resposta = await fetch (`http://localhost:3000/contato`,{
+            method:"POST",
+            headers:{
+                "Accept":"application/json",
+                "Content-Type":"application/json" // o tipo de conteudo que estou mandando é o JSON
+            },
+            body:JSON.stringify({
+                "nome":nome,
+                "email":email,
+                "assunto":assunto,
+                "mensagem":mensagem})
+        })
+        // terceira etapa - pegar a resposta do back-end
+        if(resposta.ok){
+            const dados = await resposta.json()
+            document.getElementById("resultadoFale").innerText = dados.resposta
+        }else{
+
+        }
+    })
+</script>
+</html>

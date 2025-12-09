@@ -1,0 +1,113 @@
+body{
+    background-color: #F8BBD0;
+    display: flex;
+    justify-content: center; 
+}
+
+.fundo_btn {
+    position: fixed;             /* Fixa os botões na tela, para que não rolem com a página */
+    top: 0%;                     /* Define a distância do topo da tela */
+    left: 50%;                   /* Centraliza horizontalmente em relação à tela */
+    transform: translateX(-50%); /* Ajuste fino para centralizar corretamente */
+    z-index: 10;                 /* Define a camada acima do conteúdo da página */
+   
+    border: 2px solid #E91E63; /* Borda rosa escuro */
+    padding: 20px;               /* Espaçamento interno da caixa dos botões */
+    background-color: rgba(255, 255, 255, 0.95); /* Fundo rosa claro com leve transparência */
+    border-radius: 12px;         /* Arredonda os cantos da caixa */
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4); /* Sombra da caixa mais pronunciada */
+    text-align: center;          /* Centraliza o texto dentro da caixa */
+    display: flex;               /* Usa flexbox para organizar os botões */
+    flex-wrap: wrap;             /* Permite que os botões quebrem linha se não houver espaço */
+    justify-content: center;     /* Centraliza os botões dentro da caixa */
+    gap: 12px;                   /* Espaçamento entre os botões */
+    width: 100%;
+}
+
+.btn_branco, .btn2{
+    padding: 14px 28px;          /* Tamanho interno dos botões */
+    font-size: 18px;             /* Tamanho da fonte dos botões */
+    font-weight: 600;            /* Deixa o texto mais grosso */
+    border-radius: 12px;         /* Bordas arredondadas dos botões */
+    border: none;                /* Remove a borda padrão dos botões */
+    cursor: pointer;             /* Muda o cursor para mão ao passar sobre o botão */
+    transition: all 0.3s ease;   /* Efeito suave para transições */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra leve dos botões */
+    background-color: #E91E63;   /* Fundo rosa escuro dos botões */
+    color: #FFFFFF;              /* Texto branco dos botões */
+}
+
+.fundo_btn figure img {
+    width: 40px;
+    height: auto;
+    padding: 8px;
+    display: block;
+    /* evita espaço extra abaixo */
+}
+
+.div_home, .div_trabalhe{
+    border: 2px solid #E91E63; /* Borda rosa escuro */
+    padding: 15px;               /* Espaçamento interno das divs */
+    margin-top: 180px;           /* Espaço acima das divs, abaixo dos botões fixos */
+    background-color: #ffffff; /* Fundo rosa claro das divs */
+    border-radius: 12px;         /* Cantos arredondados das divs */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave das divs */
+    width: 80%;                  /* Largura das divs */
+    max-width: 800px;            /* Largura máxima das divs */
+    text-align: center;          /* Centraliza o texto dentro das divs */
+    z-index: 1;                  /* Fica abaixo dos botões fixos */
+    width: 500px; 
+}
+
+.btn {
+    background-color:#E91E63;                   /* Fundo rosa */
+    color: white;                                /* Texto branco */
+    border: none;                                /* Sem borda */
+    padding: 10px 25px;                          /* Tamanho do botão */
+    border-radius: 20px;                         /* Arredonda o botão */
+    margin-top: 15px;                            /* Espaço acima do botão */
+    cursor: pointer;                             /* Mostra a "mãozinha" */
+    font-weight: bold;                           /* Texto forte */
+    transition: all 0.3s ease;                   /* Suaviza o efeito hover */
+    outline: none; /* Remove o contorno padrão */
+    font-size: 20px;
+}
+
+.d_p{
+    background-color: #ffffff; /* Fundo rosa claro das divs */
+    border-radius: 12px; /* Bordas arredondadas */
+    color:#E91E63;
+    margin: 0 auto;
+    font-weight: bold; 
+    width: 250px;  /*ajusta o tamanho da div*/
+    align-items: center; 
+}
+
+input {
+    border-radius: 8px; /* Bordas arredondadas */
+    border: 1px solid rgb(195, 195, 196); /* Borda cinza */
+    text-align: center; /* Centralizado */
+    padding: 10px; /* Espaçamento interno */
+    transition: border-color 0.3s; /* Transição suave para a cor da borda */
+}
+
+input:focus {
+    border-color: #E91E63; /* Muda a cor da borda ao focar */
+    outline: none; /* Remove o contorno padrão */
+}
+
+label {
+    color: #E91E63;                    /* Texto em branco */
+    font-size: 12px;                   /* Tamanho do texto */
+    font-weight: bold;                 /* Negrito */
+    text-align: center;                /* Centralizado */
+    margin-bottom: 15px;               /* Espaço abaixo do título */
+    letter-spacing: 0.5px;             /* Espaçamento entre letras */
+    text-transform: uppercase;         /* Deixa em maiúsculas */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Sombra suave para dar destaque */
+}
+
+/* Esconder conteúdo */
+.ocultar {
+    display: none;               /* Esconde completamente o elemento */
+}

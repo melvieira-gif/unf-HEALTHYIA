@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vagas abertas</title>
+    <link rel="stylesheet" href="vagaCSS.css" />
+</head>
+<body>
+    <div class="fundo_btn">
+        <figure>
+            <img src="HealthIA.png" alt="LOGOTIPO HEALTH-IA">
+        </figure>
+        <button class="btn_branco" id="btn_home">Home</button>
+        <button class="btn_branco" id="btn_trabalhe">Trabalhe Conosco</button>
+    </div>
+    <!--Parte para home -->
+    <div class="div_trabalhe ocultar" id="div_trabalhe">
+        <h1 class="d_p">Trabalhar conosco</h1>
+
+        <label for="input_vaga_Trabalhe">Qual vaga quer se candidatar?</label>
+        <br>
+        <input id="input_vaga_Trabalhe" type="text">
+        <br><br>
+
+        <label for="input_nome_trabalhe">Nome Completo</label>
+        <br>
+        <input id="input_nome_trabalhe" type="text"> <!-- CORRIGIDO -->
+        <br><br>
+
+        <label for="input_email_trabalhe">Email</label>
+        <br>
+        <input id="input_email_trabalhe" type="email">
+        <br><br>
+
+        <button id="btn_salvar_vaga" class="btn2">Salvar</button>
+        <br><br>
+
+        <p class="d_p" id="resultado_cadastro_vaga">Status do Cadastro aparecerá aqui</p>
+    </div>
+
+    <!--Parte para candidatar-se -->
+    <div class="div_home ocultar" id="div_home">
+        <h1 class="d_p">Home</h1>
+        <h1 class="h1V">
+            <br>
+            Já se candidatou?
+            <br>
+            Volte para a pagina inicial
+        </h1>
+        <button class="btn" id="btn_candidate2"><a href="login.html" target="_blank">Voltar para a tela inicial</a></button>
+    </div>
+</body>
+<script>
+    document.getElementById("btn_home").addEventListener("click", () => {
+        document.getElementById("div_trabalhe").classList.add("ocultar");
+        document.getElementById("div_home").classList.toggle("ocultar");
+    });
+
+    document.getElementById("btn_trabalhe").addEventListener("click", () => {
+        document.getElementById("div_home").classList.add("ocultar");
+        document.getElementById("div_trabalhe").classList.toggle("ocultar");
+    });
+
+    // criar um evento para quando clicar no botão
+    document.getElementById("btn_salvar_vaga").addEventListener("click", async ()=>{
+        // primeira etapa- pegar as informaçoes dos inputs 
+        const nome_compl = document.getElementById("input_nome_trabalhe").value
+        const email = document.getElementById("input_email_trabalhe").value
+        const qual_vaga = document.getElementById("input_vaga_Trabalhe").value
+
+        // segunda etapa- fazer a requisição para o back-end o que o thunder client não mostra oq faz
+        // fetch funciona pq vai passar o endereço da requisição
+        const resposta = await fetch (`http://localhost:3000/vaga`,{
+            method:"POST",
+            headers:{
+                "Accept":"application/json",
+                "Content-Type":"application/json" // o tipo de conteudo que estou mandando é o JSON
+            },
+            body:JSON.stringify({
+                "nome_compl":nome_compl, 
+                "email":email,
+                "qual_vaga":qual_vaga})
+        })
+        // terceira etapa - pegar a resposta do back-end
+        if(resposta.ok){
+            const dados = await resposta.json()
+            document.getElementById("resultado_cadastro_vaga").innerText = dados.resposta
+        }else{
+
+        }
+    })
+</script>
+</html>
